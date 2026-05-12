@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: Arial, sans-serif;
+      height: 100%;
+      width: 100%;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* H - Header */
+    .header {
+      background: #3d3d3d;
+      width: 100%;
+      height: 10vh;
+      text-align: center;
+      line-height: 10vh;
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    /* Row: Content A, B, C, D */
+    .row-abcd {
+      width: 100%;
+    }
+
+    /* A/B/C row = 40vh, E/F each = 20vh, G = 10vh, H = 10vh → total 100vh */
+    .content-a {
+      float: left;
+      width: 20%;
+      height: 40vh;
+      background: #f5a800;
+      text-align: center;
+      line-height: 40vh;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .content-b {
+      float: left;
+      width: 20%;
+      height: 40vh;
+      background: #2d5a1b;
+      text-align: center;
+      line-height: 40vh;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .content-c {
+      float: left;
+      width: 25%;
+      height: 40vh;
+      background: #0000cc;
+      text-align: center;
+      line-height: 40vh;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .content-d {
+      float: right;
+      width: 35%;
+      /* D spans A/B/C + E + F = 40 + 20 + 20 = 80vh */
+      height: 80vh;
+      background: #5b9bd5;
+      text-align: center;
+      line-height: 80vh;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    /* Left column wrapper for E and F (sits beside D) */
+    .left-col {
+      float: left;
+      width: 65%;
+    }
+
+    .content-e {
+      width: 100%;
+      height: 20vh;
+      background: #6e6e6e;
+      text-align: center;
+      line-height: 20vh;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .content-f {
+      width: 100%;
+      height: 20vh;
+      background: #0000ff;
+      text-align: center;
+      line-height: 20vh;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    /* G - full width footer */
+    .content-g {
+      clear: both;
+      width: 100%;
+      height: 10vh;
+      background: #ff0000;
+      text-align: center;
+      line-height: 10vh;
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- H Header -->
+  <div class="header">H</div>
+
+  <!-- Row: A, B, C float left | D floats right and spans down -->
+  <div class="clearfix">
+
+    <!-- D floats right first so it spans E and F too -->
+    <div class="content-d">Content D</div>
+
+    <!-- A, B, C -->
+    <div class="content-a">Content A</div>
+    <div class="content-b">Content B</div>
+    <div class="content-c">Content C</div>
+
+    <!-- E and F stacked in a left column beside D -->
+    <div class="left-col">
+      <div class="content-e">Content E</div>
+      <div class="content-f">Content F</div>
+    </div>
+
+  </div>
+
+  <!-- G Footer -->
+  <div class="content-g">Content G</div>
+
+</body>
+</html>
