@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HP Website Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* ── TOP NAVBAR ── */
+    .top-nav {
+      background: #0096D6;
+      height: 48px;
+      padding: 0 24px;
+    }
+
+    .top-nav .logo {
+      float: left;
+      background: #fff;
+      width: 40px;
+      height: 22px;
+      margin-top: 13px;
+      border-radius: 3px;
+    }
+
+    .top-nav .nav-links {
+      float: left;
+      margin-left: 28px;
+      margin-top: 16px;
+    }
+
+    .top-nav .nav-links span {
+      float: left;
+      background: rgba(255,255,255,0.35);
+      width: 60px;
+      height: 12px;
+      border-radius: 2px;
+      margin-right: 12px;
+    }
+
+    .top-nav .nav-right {
+      float: right;
+      margin-top: 16px;
+    }
+
+    .top-nav .nav-right span {
+      float: left;
+      background: rgba(255,255,255,0.35);
+      width: 30px;
+      height: 12px;
+      border-radius: 2px;
+      margin-left: 12px;
+    }
+
+    /* ── SECONDARY NAV ── */
+    .secondary-nav {
+      background: #fff;
+      border-bottom: 2.5px solid #0096D6;
+      height: 44px;
+      padding: 0 24px;
+    }
+
+    .secondary-nav .sec-links {
+      float: left;
+      margin-top: 14px;
+    }
+
+    .secondary-nav .sec-links span {
+      float: left;
+      background: #d0eaf7;
+      width: 70px;
+      height: 11px;
+      border-radius: 2px;
+      margin-right: 14px;
+    }
+
+    .secondary-nav .sec-links span.active {
+      background: #0096D6;
+    }
+
+    .secondary-nav .search-bar {
+      float: right;
+      background: #f0f8fd;
+      border: 1.5px solid #0096D6;
+      width: 130px;
+      height: 26px;
+      border-radius: 4px;
+      margin-top: 9px;
+    }
+
+    /* ── HERO BANNER ── */
+    .hero {
+      background: #0096D6;
+      padding: 40px 32px;
+      min-height: 210px;
+    }
+
+    .hero-text {
+      float: left;
+      width: 45%;
+      padding-right: 20px;
+    }
+
+    .hero-text .hero-title {
+      background: rgba(255,255,255,0.35);
+      width: 70%;
+      height: 20px;
+      border-radius: 3px;
+      margin-bottom: 14px;
+    }
+
+    .hero-text .hero-sub {
+      background: rgba(255,255,255,0.2);
+      width: 85%;
+      height: 10px;
+      border-radius: 2px;
+      margin-bottom: 8px;
+    }
+
+    .hero-text .hero-sub.short {
+      width: 65%;
+    }
+
+    .hero-text .hero-btn {
+      background: #fff;
+      width: 110px;
+      height: 36px;
+      border-radius: 4px;
+      margin-top: 20px;
+      opacity: 0.92;
+    }
+
+    .hero-image {
+      float: right;
+      width: 50%;
+      height: 150px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 8px;
+    }
+
+    /* ── 4 CATEGORY CARDS ── */
+    .category-section {
+      background: #fff;
+      padding: 28px 20px;
+    }
+
+    .cat-card {
+      float: left;
+      width: 23.5%;
+      margin-right: 2%;
+      background: #f0f8fd;
+      border: 1.5px solid #0096D6;
+      border-radius: 8px;
+      padding: 18px;
+      min-height: 140px;
+    }
+
+    .cat-card:last-child {
+      margin-right: 0;
+    }
+
+    .cat-card .cat-icon {
+      background: #0096D6;
+      width: 38px;
+      height: 38px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+    }
+
+    .cat-card .cat-title {
+      background: #7bbfdf;
+      width: 70%;
+      height: 11px;
+      border-radius: 2px;
+      margin-bottom: 8px;
+    }
+
+    .cat-card .cat-desc {
+      background: #d0eaf7;
+      width: 90%;
+      height: 9px;
+      border-radius: 2px;
+    }
+
+    /* ── FEATURED SECTION ── */
+    .featured-section {
+      background: #e8f5fc;
+      padding: 28px 20px;
+    }
+
+    .featured-main {
+      float: left;
+      width: 63%;
+      padding-right: 16px;
+    }
+
+    .featured-main .feat-box {
+      background: #0096D6;
+      border-radius: 8px;
+      padding: 24px;
+      min-height: 170px;
+    }
+
+    .feat-box .feat-title {
+      background: rgba(255,255,255,0.35);
+      width: 50%;
+      height: 16px;
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+
+    .feat-box .feat-sub {
+      background: rgba(255,255,255,0.2);
+      width: 75%;
+      height: 10px;
+      border-radius: 2px;
+      margin-bottom: 7px;
+    }
+
+    .feat-box .feat-sub.short {
+      width: 55%;
+    }
+
+    .feat-box .feat-btn {
+      background: #fff;
+      width: 100px;
+      height: 30px;
+      border-radius: 4px;
+      margin-top: 20px;
+      opacity: 0.9;
+    }
+
+    .featured-sidebar {
+      float: right;
+      width: 37%;
+    }
+
+    .sidebar-card {
+      background: #fff;
+      border: 1px solid #b3d9ef;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 14px;
+      min-height: 75px;
+    }
+
+    .sidebar-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .sidebar-card .sc-title {
+      background: #b3d9ef;
+      width: 60%;
+      height: 11px;
+      border-radius: 2px;
+      margin-bottom: 9px;
+    }
+
+    .sidebar-card .sc-sub {
+      background: #e8f5fc;
+      width: 80%;
+      height: 9px;
+      border-radius: 2px;
+    }
+
+    /* ── 3 PROMO TILES ── */
+    .promo-section {
+      background: #fff;
+      padding: 28px 20px;
+    }
+
+    .promo-card {
+      float: left;
+      width: 32%;
+      margin-right: 2%;
+      background: #f0f8fd;
+      border-radius: 8px;
+      padding: 16px;
+      min-height: 120px;
+    }
+
+    .promo-card:last-child {
+      margin-right: 0;
+    }
+
+    .promo-card .promo-img {
+      background: #0096D6;
+      width: 100%;
+      height: 55px;
+      border-radius: 5px;
+      margin-bottom: 12px;
+    }
+
+    .promo-card .promo-title {
+      background: #7bbfdf;
+      width: 55%;
+      height: 10px;
+      border-radius: 2px;
+      margin-bottom: 7px;
+    }
+
+    .promo-card .promo-desc {
+      background: #d0eaf7;
+      width: 82%;
+      height: 8px;
+      border-radius: 2px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #0096D6;
+      padding: 28px 20px 0;
+    }
+
+    .footer-col {
+      float: left;
+      width: 20%;
+      padding-right: 12px;
+      margin-bottom: 20px;
+    }
+
+    .footer-col .fc-heading {
+      background: rgba(255,255,255,0.55);
+      width: 55%;
+      height: 11px;
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+
+    .footer-col .fc-link {
+      background: rgba(255,255,255,0.25);
+      height: 9px;
+      border-radius: 2px;
+      margin-bottom: 7px;
+    }
+
+    .footer-col .fc-link.w70 { width: 70%; }
+    .footer-col .fc-link.w60 { width: 60%; }
+    .footer-col .fc-link.w65 { width: 65%; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.3);
+      padding: 14px 0;
+    }
+
+    .footer-bottom .copy {
+      float: left;
+      background: rgba(255,255,255,0.3);
+      width: 200px;
+      height: 9px;
+      border-radius: 2px;
+      margin-top: 6px;
+    }
+
+    .footer-bottom .social {
+      float: right;
+    }
+
+    .footer-bottom .social span {
+      float: left;
+      background: rgba(255,255,255,0.3);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      margin-left: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAVBAR -->
+  <div class="top-nav clearfix">
+    <div class="logo"></div>
+    <div class="nav-links clearfix">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="nav-right clearfix">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <!-- SECONDARY NAV -->
+  <div class="secondary-nav clearfix">
+    <div class="sec-links clearfix">
+      <span></span>
+      <span></span>
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="search-bar"></div>
+  </div>
+
+  <!-- HERO BANNER -->
+  <div class="hero clearfix">
+    <div class="hero-text">
+      <div class="hero-title"></div>
+      <div class="hero-sub"></div>
+      <div class="hero-sub short"></div>
+      <div class="hero-btn"></div>
+    </div>
+    <div class="hero-image"></div>
+  </div>
+
+  <!-- 4 CATEGORY CARDS -->
+  <div class="category-section clearfix">
+    <div class="cat-card">
+      <div class="cat-icon"></div>
+      <div class="cat-title"></div>
+      <div class="cat-desc"></div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon"></div>
+      <div class="cat-title"></div>
+      <div class="cat-desc"></div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon"></div>
+      <div class="cat-title"></div>
+      <div class="cat-desc"></div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon"></div>
+      <div class="cat-title"></div>
+      <div class="cat-desc"></div>
+    </div>
+  </div>
+
+  <!-- FEATURED SECTION -->
+  <div class="featured-section clearfix">
+    <div class="featured-main">
+      <div class="feat-box">
+        <div class="feat-title"></div>
+        <div class="feat-sub"></div>
+        <div class="feat-sub short"></div>
+        <div class="feat-btn"></div>
+      </div>
+    </div>
+    <div class="featured-sidebar">
+      <div class="sidebar-card">
+        <div class="sc-title"></div>
+        <div class="sc-sub"></div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sc-title"></div>
+        <div class="sc-sub"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 PROMO TILES -->
+  <div class="promo-section clearfix">
+    <div class="promo-card">
+      <div class="promo-img"></div>
+      <div class="promo-title"></div>
+      <div class="promo-desc"></div>
+    </div>
+    <div class="promo-card">
+      <div class="promo-img"></div>
+      <div class="promo-title"></div>
+      <div class="promo-desc"></div>
+    </div>
+    <div class="promo-card">
+      <div class="promo-img"></div>
+      <div class="promo-title"></div>
+      <div class="promo-desc"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer clearfix">
+    <div class="footer-col">
+      <div class="fc-heading"></div>
+      <div class="fc-link w70"></div>
+      <div class="fc-link w60"></div>
+      <div class="fc-link w65"></div>
+    </div>
+    <div class="footer-col">
+      <div class="fc-heading"></div>
+      <div class="fc-link w70"></div>
+      <div class="fc-link w60"></div>
+      <div class="fc-link w65"></div>
+    </div>
+    <div class="footer-col">
+      <div class="fc-heading"></div>
+      <div class="fc-link w70"></div>
+      <div class="fc-link w60"></div>
+      <div class="fc-link w65"></div>
+    </div>
+    <div class="footer-col">
+      <div class="fc-heading"></div>
+      <div class="fc-link w70"></div>
+      <div class="fc-link w60"></div>
+      <div class="fc-link w65"></div>
+    </div>
+    <div class="footer-col">
+      <div class="fc-heading"></div>
+      <div class="fc-link w70"></div>
+      <div class="fc-link w60"></div>
+      <div class="fc-link w65"></div>
+    </div>
+
+    <div class="footer-bottom clearfix">
+      <div class="copy"></div>
+      <div class="social clearfix">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
