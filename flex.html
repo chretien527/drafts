@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #navbar{
+            background-color: blue;
+            width: 100vw;
+            min-height:10vh;
+        }
+        #leftsidebar{
+            background-color: gray;
+            width: 25%;
+            min-height: 80vh;
+        }
+        #middle{
+            width: 50%;
+            background: dodgerblue;
+            min-height: 80vh;
+        }
+        #rightsidebar{
+            width: 25%;
+            background-color: orange;
+            min-height: 80vh;
+        }
+        #footer{
+            background-color: beige;
+            width: 100%;
+            min-height: 10vh;
+        }
+        #leftsidebar,#middle,#rightsidebar{
+            float: left;
+        }
+        #footer{
+            clear:left;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div id="navbar"></div>
+    <div id="leftsidebar"></div>
+    <div id="middle"></div>
+    <div id="rightsidebar"></div>
+    <div id="footer"></div>
+    </div>
+</body>
+</html>
