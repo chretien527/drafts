@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YouTube Layout Blueprint</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fff;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* ══════════════════════════════
+       HEADER / TOP BAR — BLACK
+    ══════════════════════════════ */
+    #header {
+      background: #000000;
+      height: 56px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    #header-left {
+      float: left;
+      width: 200px;
+      height: 56px;
+      background: #111111;
+    }
+
+    #header-center {
+      float: left;
+      width: calc(100% - 400px);
+      height: 56px;
+      background: #000000;
+    }
+
+    #header-right {
+      float: right;
+      width: 200px;
+      height: 56px;
+      background: #111111;
+    }
+
+    /* ══════════════════════════════
+       CATEGORY / FILTER BAR — WHITE
+    ══════════════════════════════ */
+    #filter-bar {
+      background: #ffffff;
+      height: 40px;
+      width: 100%;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    /* ══════════════════════════════
+       BODY WRAPPER
+    ══════════════════════════════ */
+    #body-wrapper {
+      width: 100%;
+      overflow: hidden;
+      min-height: calc(100vh - 144px);
+    }
+
+    /* ══════════════════════════════
+       LEFT SIDEBAR — BLUE
+    ══════════════════════════════ */
+    #sidebar {
+      float: left;
+      width: 200px;
+      min-height: calc(100vh - 144px);
+      background: #1565c0;
+    }
+
+    .sidebar-section {
+      padding: 12px 8px;
+      border-bottom: 2px solid rgba(255,255,255,0.15);
+    }
+
+    .sidebar-item {
+      height: 36px;
+      background: rgba(255,255,255,0.12);
+      margin: 6px 0;
+      border-radius: 4px;
+    }
+
+    /* ══════════════════════════════
+       MAIN CONTENT AREA — WHITE
+    ══════════════════════════════ */
+    #main-content {
+      float: left;
+      width: calc(100% - 200px);
+      min-height: calc(100vh - 144px);
+      background: #ffffff;
+      padding: 16px;
+    }
+
+    /* ── Section Title Bar ── */
+    .section-title {
+      height: 28px;
+      background: #eeeeee;
+      margin-bottom: 12px;
+      border-radius: 4px;
+    }
+
+    /* ── Video Grid ── */
+    .video-grid {
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .video-card {
+      float: left;
+      width: calc(25% - 12px);
+      margin-right: 12px;
+      margin-bottom: 16px;
+      background: #f5f5f5;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid #e0e0e0;
+    }
+
+    .video-card:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 110px;
+      background: #e0e0e0;
+    }
+
+    .video-info {
+      padding: 8px;
+      overflow: hidden;
+    }
+
+    .video-avatar {
+      float: left;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #bdbdbd;
+      margin-right: 8px;
+    }
+
+    .video-meta {
+      float: left;
+      width: calc(100% - 40px);
+      padding-top: 4px;
+    }
+
+    .video-title-bar {
+      height: 12px;
+      background: #d0d0d0;
+      border-radius: 2px;
+      margin-bottom: 6px;
+    }
+
+    .video-sub-bar {
+      height: 10px;
+      background: #e0e0e0;
+      border-radius: 2px;
+      width: 70%;
+    }
+
+    /* ── Shorts Row ── */
+    .shorts-grid {
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .short-card {
+      float: left;
+      width: calc(16.66% - 10px);
+      margin-right: 10px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #e0e0e0;
+    }
+
+    .short-card:last-child {
+      margin-right: 0;
+    }
+
+    .short-thumb {
+      width: 100%;
+      height: 160px;
+      background: #e0e0e0;
+    }
+
+    .short-label-bar {
+      height: 28px;
+      background: #f5f5f5;
+    }
+
+    /* ══════════════════════════════
+       BOTTOM BAR — YELLOW
+    ══════════════════════════════ */
+    #bottom-bar {
+      clear: both;
+      background: #ffd600;
+      height: 48px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HEADER — BLACK ══ -->
+  <div id="header" class="clearfix">
+    <div id="header-left"></div>
+    <div id="header-center"></div>
+    <div id="header-right"></div>
+  </div>
+
+  <!-- ══ FILTER BAR — WHITE ══ -->
+  <div id="filter-bar"></div>
+
+  <!-- ══ BODY ══ -->
+  <div id="body-wrapper" class="clearfix">
+
+    <!-- LEFT SIDEBAR — BLUE -->
+    <div id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-item"></div>
+        <div class="sidebar-item"></div>
+        <div class="sidebar-item"></div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-item"></div>
+        <div class="sidebar-item"></div>
+        <div class="sidebar-item"></div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-item"></div>
+        <div class="sidebar-item"></div>
+        <div class="sidebar-item"></div>
+        <div class="sidebar-item"></div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-item"></div>
+        <div class="sidebar-item"></div>
+        <div class="sidebar-item"></div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT — WHITE -->
+    <div id="main-content">
+
+      <!-- SHORTS ROW -->
+      <div class="section-title"></div>
+      <div class="shorts-grid clearfix">
+        <div class="short-card">
+          <div class="short-thumb"></div>
+          <div class="short-label-bar"></div>
+        </div>
+        <div class="short-card">
+          <div class="short-thumb"></div>
+          <div class="short-label-bar"></div>
+        </div>
+        <div class="short-card">
+          <div class="short-thumb"></div>
+          <div class="short-label-bar"></div>
+        </div>
+        <div class="short-card">
+          <div class="short-thumb"></div>
+          <div class="short-label-bar"></div>
+        </div>
+        <div class="short-card">
+          <div class="short-thumb"></div>
+          <div class="short-label-bar"></div>
+        </div>
+        <div class="short-card">
+          <div class="short-thumb"></div>
+          <div class="short-label-bar"></div>
+        </div>
+      </div>
+
+      <!-- VIDEO GRID ROW 1 -->
+      <div class="section-title"></div>
+      <div class="video-grid clearfix">
+        <div class="video-card">
+          <div class="video-thumbnail"></div>
+          <div class="video-info clearfix">
+            <div class="video-avatar"></div>
+            <div class="video-meta">
+              <div class="video-title-bar"></div>
+              <div class="video-sub-bar"></div>
+            </div>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumbnail"></div>
+          <div class="video-info clearfix">
+            <div class="video-avatar"></div>
+            <div class="video-meta">
+              <div class="video-title-bar"></div>
+              <div class="video-sub-bar"></div>
+            </div>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumbnail"></div>
+          <div class="video-info clearfix">
+            <div class="video-avatar"></div>
+            <div class="video-meta">
+              <div class="video-title-bar"></div>
+              <div class="video-sub-bar"></div>
+            </div>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumbnail"></div>
+          <div class="video-info clearfix">
+            <div class="video-avatar"></div>
+            <div class="video-meta">
+              <div class="video-title-bar"></div>
+              <div class="video-sub-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIDEO GRID ROW 2 -->
+      <div class="section-title"></div>
+      <div class="video-grid clearfix">
+        <div class="video-card">
+          <div class="video-thumbnail"></div>
+          <div class="video-info clearfix">
+            <div class="video-avatar"></div>
+            <div class="video-meta">
+              <div class="video-title-bar"></div>
+              <div class="video-sub-bar"></div>
+            </div>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumbnail"></div>
+          <div class="video-info clearfix">
+            <div class="video-avatar"></div>
+            <div class="video-meta">
+              <div class="video-title-bar"></div>
+              <div class="video-sub-bar"></div>
+            </div>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumbnail"></div>
+          <div class="video-info clearfix">
+            <div class="video-avatar"></div>
+            <div class="video-meta">
+              <div class="video-title-bar"></div>
+              <div class="video-sub-bar"></div>
+            </div>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumbnail"></div>
+          <div class="video-info clearfix">
+            <div class="video-avatar"></div>
+            <div class="video-meta">
+              <div class="video-title-bar"></div>
+              <div class="video-sub-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /main-content -->
+  </div><!-- /body-wrapper -->
+
+  <!-- ══ BOTTOM — YELLOW ══ -->
+  <div id="bottom-bar"></div>
+
+</body>
+</html>
