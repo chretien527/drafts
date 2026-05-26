@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    background-color: grey;
+    width: 100vw;
+    height: 15vh;
+}
+
+.sidebars{
+    display: flex;
+}
+
+.leftsidebar{
+    background-color: rgb(73, 36, 10);
+    height: 70vh;
+    width: 20vw;
+    float: left;
+    clear: left;
+}
+
+.middlesidebar{
+    background-color: blue;
+    width: 60vw;
+    height: 70vh;
+}
+
+.rightsidebar{
+    background-color: orange;
+    width: 20vw;
+    height: 70vh;
+}
+
+.footer{
+    background-color: green;
+    width: 100vw;
+    height: 15vh;
+}
