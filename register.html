@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Profile - Tasker</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Kaushan+Script&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Left Sidebar -->
+  <aside class="sidebar">
+    
+    <div class="logo">
+      <div class="logo-icon">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="18" fill="#3b82f6"/>
+          <g transform="skewX(-20)">
+            <path d="M 14 14 Q 16 13 22 13 Q 28 13 30 14 Q 29 15 23 15.5 L 23 16 Q 23.5 16 24 17 L 24 30 Q 24 32 23 33 Q 22 33.5 21 33 Q 20 32 20 30 L 20 17 Q 20.5 16 21 16 L 21 15.5 Q 15 15 14 14 Z" 
+                  fill="white" 
+                  stroke="white" 
+                  stroke-width="0.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"/>
+          </g>
+        </svg>
+      </div>
+      <span class="logo-text">Tasker</span>
+    </div>
+
+    <nav class="nav-menu">
+      <a href="#" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M3 4h14v2H3V4zm0 4h10v2H3V8zm0 4h14v2H3v-2z"/>
+        </svg>
+        <span>Overview</span>
+      </a>
+
+      <a href="#" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M4 4h4v4H4V4zm6 0h4v4h-4V4zm-6 6h4v4H4v-4zm6 0h4v4h-4v-4z"/>
+        </svg>
+        <span>Tasks</span>
+      </a>
+
+      <a href="#" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <rect x="3" y="4" width="14" height="12" rx="2" stroke="currentColor" fill="none" stroke-width="1.5"/>
+          <path d="M3 8h14M7 4v4M13 4v4"/>
+        </svg>
+        <span>Calendar</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <button class="add-task-btn">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Add task</span>
+      </button>
+
+      <a href="#" class="nav-item active">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <circle cx="10" cy="7" r="3"/>
+          <path d="M4 18c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+        </svg>
+        <span>Account</span>
+      </a>
+
+      <a href="#" class="nav-item">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <circle cx="10" cy="10" r="7" stroke="currentColor" fill="none" stroke-width="1.5"/>
+          <path d="M10 6v4l3 2"/>
+        </svg>
+        <span>Settings</span>
+      </a>
+    </div>
+
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Top Bar -->
+    <header class="topbar">
+      <div class="search-box">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#9ca3af">
+          <circle cx="9" cy="9" r="6" stroke-width="2"/>
+          <line x1="14" y1="14" x2="18" y2="18" stroke-width="2"/>
+        </svg>
+        <input type="text" placeholder="Search something">
+      </div>
+
+      <div class="topbar-actions">
+        <button class="icon-btn">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="#6b7280">
+            <path d="M10 2a6 6 0 00-6 6v4l-2 2v1h16v-1l-2-2V8a6 6 0 00-6-6zm0 16a2 2 0 01-2-2h4a2 2 0 01-2 2z"/>
+          </svg>
+        </button>
+
+        <button class="icon-btn">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="#6b7280">
+            <circle cx="10" cy="10" r="7" stroke="currentColor" fill="none" stroke-width="1.5"/>
+            <path d="M10 6v4l3 2"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Profile Edit Form -->
+    <section class="profile-section">
+      
+      <h2 class="section-title">Edit your profile</h2>
+
+      <div class="profile-form">
+
+        <div class="upload-section">
+          <div class="upload-header">
+            <div class="upload-title">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4a5568">
+                <path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3-3m0 0l3 3m-3-3v8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Upload files</span>
+            </div>
+            <button class="collapse-btn">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M5 8l5 5 5-5"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="photo-upload">
+            <div class="photo-preview">
+              <img src="images/samantha.png" alt="Profile">
+            </div>
+            <div class="photo-actions">
+              <label class="upload-label">Upload photo</label>
+              <button class="remove-btn">Remove photo</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" value="Samantha Cartel" placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+          <label>About</label>
+          <input type="text" placeholder="Anything about you">
+        </div>
+
+        <button class="update-btn">Update profile</button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Right Sidebar -->
+  <aside class="right-sidebar">
+
+    <div class="profile-card">
+      <div class="profile-avatar">
+        <img src="images/samantha.png" alt="Profile">
+      </div>
+      <h3 class="profile-name">Samantha Cartel</h3>
+      <p class="profile-role">Senior front-end developer at Google</p>
+    </div>
+
+    <div class="calendar-widget">
+      <div class="calendar-header">
+        <button class="calendar-nav">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M10 12l-4-4 4-4"/>
+          </svg>
+        </button>
+        <span class="calendar-month">23 June 2022</span>
+        <button class="calendar-nav">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M6 4l4 4-4 4"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="calendar-grid">
+        <div class="calendar-week-header"></div>
+        <div class="calendar-day-header">Mo</div>
+        <div class="calendar-day-header">Tu</div>
+        <div class="calendar-day-header">We</div>
+        <div class="calendar-day-header">Th</div>
+        <div class="calendar-day-header">Fr</div>
+        <div class="calendar-day-header weekend">Sa</div>
+        <div class="calendar-day-header weekend">Su</div>
+
+        <div class="calendar-week-number">22</div>
+        <div class="calendar-day other-month">30</div>
+        <div class="calendar-day other-month">31</div>
+        <div class="calendar-day">1</div>
+        <div class="calendar-day">2</div>
+        <div class="calendar-day">3</div>
+        <div class="calendar-day weekend-day">4</div>
+        <div class="calendar-day weekend-day">5</div>
+
+        <div class="calendar-week-number">23</div>
+        <div class="calendar-day">6</div>
+        <div class="calendar-day">7</div>
+        <div class="calendar-day">8</div>
+        <div class="calendar-day">9</div>
+        <div class="calendar-day">10</div>
+        <div class="calendar-day weekend-day">11</div>
+        <div class="calendar-day weekend-day">12</div>
+
+        <div class="calendar-week-number">24</div>
+        <div class="calendar-day">13</div>
+        <div class="calendar-day">14</div>
+        <div class="calendar-day">15</div>
+        <div class="calendar-day">16</div>
+        <div class="calendar-day">17</div>
+        <div class="calendar-day weekend-day">18</div>
+        <div class="calendar-day weekend-day">19</div>
+
+        <div class="calendar-week-number">25</div>
+        <div class="calendar-day">20</div>
+        <div class="calendar-day">21</div>
+        <div class="calendar-day">22</div>
+        <div class="calendar-day today">23</div>
+        <div class="calendar-day">24</div>
+        <div class="calendar-day weekend-day">25</div>
+        <div class="calendar-day weekend-day">26</div>
+
+        <div class="calendar-week-number">26</div>
+        <div class="calendar-day">27</div>
+        <div class="calendar-day">28</div>
+        <div class="calendar-day">29</div>
+        <div class="calendar-day">30</div>
+        <div class="calendar-day other-month">1</div>
+        <div class="calendar-day other-month weekend-day">2</div>
+        <div class="calendar-day other-month weekend-day">3</div>
+
+        <div class="calendar-week-number">27</div>
+        <div class="calendar-day other-month">4</div>
+        <div class="calendar-day other-month">5</div>
+        <div class="calendar-day other-month">6</div>
+        <div class="calendar-day other-month">7</div>
+        <div class="calendar-day other-month">8</div>
+        <div class="calendar-day other-month weekend-day">9</div>
+        <div class="calendar-day other-month weekend-day">10</div>
+      </div>
+    </div>
+
+    <div class="recent-tasks">
+      <h4 class="recent-title">Recently added</h4>
+      <ul class="task-list">
+        <li class="task-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#3b82f6">
+            <path d="M3 8l3 3 7-7" stroke="#3b82f6" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span>Go to a job interview a kigali Inn</span>
+        </li>
+        <li class="task-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#3b82f6">
+            <path d="M3 8l3 3 7-7" stroke="#3b82f6" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span>Go to a job interview a kigali Inn</span>
+        </li>
+        <li class="task-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#3b82f6">
+            <path d="M3 8l3 3 7-7" stroke="#3b82f6" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span>Go to a job interview a kigali Inn</span>
+        </li>
+        <li class="task-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#3b82f6">
+            <path d="M3 8l3 3 7-7" stroke="#3b82f6" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span>Go to a job interview a kigali Inn</span>
+        </li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div>
+
+</body>
+</html>
+ 
