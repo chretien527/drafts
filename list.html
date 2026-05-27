@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transfers Dashboard</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="list.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <div class="logo">
+      <img src="images/RTBlogo.png" alt="RTB Logo" class="logo-img">
+      <div class="logo-text">
+        <h2>RTB</h2>
+        <span>TVET BOARD</span>
+      </div>
+    </div>
+
+    <nav class="menu">
+
+      <a href="#" class="menu-item">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M10 2L2 8v10h6v-6h4v6h6V8l-8-6z"/>
+        </svg>
+        <span>Home</span>
+      </a>
+
+      <div class="menu-group">
+        <div class="menu-title">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M2 4h12v2H2V4zm0 4h12v2H2V8zm0 4h12v2H2v-2z"/>
+          </svg>
+          Recruitment
+        </div>
+
+        <a href="#" class="submenu">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M2 2h5v5H2V2zm7 0h5v5H9V2zM2 9h5v5H2V9zm7 0h5v5H9V9z"/>
+          </svg>
+          <span>Transfers</span>
+        </a>
+
+        <a href="#" class="submenu">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M2 2h5v5H2V2zm7 0h5v5H9V2zM2 9h5v5H2V9zm7 0h5v5H9V9z"/>
+          </svg>
+          <span>Trainers</span>
+        </a>
+
+        <a href="#" class="submenu">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M2 2h5v5H2V2zm7 0h5v5H9V2zM2 9h5v5H2V9zm7 0h5v5H9V9z"/>
+          </svg>
+          <span>Vacant Posts</span>
+        </a>
+      </div>
+
+      <a href="#" class="menu-item">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M2 16l4-8 4 6 4-10 4 8"/>
+        </svg>
+        <span>Performance</span>
+      </a>
+
+      <a href="#" class="menu-item">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <rect x="3" y="4" width="14" height="12" rx="2" stroke="currentColor" fill="none"/>
+          <path d="M3 8h14M7 4v4M13 4v4"/>
+        </svg>
+        <span>Payment</span>
+      </a>
+
+    </nav>
+
+    <div class="logout">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M3 3h8v2H5v10h6v2H3V3zm12 4l4 4-4 4v-3H9v-2h6V7z"/>
+      </svg>
+      <span>Logout</span>
+    </div>
+
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Topbar -->
+    <header class="topbar">
+
+      <div class="breadcrumbs">
+        School Manager / Dashboard / Recruitments /
+        <span>Transfers</span>
+      </div>
+
+      <div class="top-right">
+        <div class="search-box">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#999">
+            <circle cx="7" cy="7" r="5" stroke-width="2"/>
+            <line x1="11" y1="11" x2="15" y2="15" stroke-width="2"/>
+          </svg>
+          <input type="text" placeholder="Search">
+        </div>
+
+        <div class="notification">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="#666">
+            <path d="M10 2a6 6 0 00-6 6v4l-2 2v1h16v-1l-2-2V8a6 6 0 00-6-6zm0 16a2 2 0 01-2-2h4a2 2 0 01-2 2z"/>
+          </svg>
+          <span class="badge">1</span>
+        </div>
+
+        <div class="profile">
+          <img src="images/manWithHut.png" alt="profile">
+        </div>
+      </div>
+
+    </header>
+
+    <!-- Content -->
+    <section class="content">
+
+      <h2 class="page-title">Incoming Transfers</h2>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active-tab">Incoming</button>
+        <button class="tab">Outgoing</button>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters">
+        <select class="filter-dropdown">
+          <option>Filter</option>
+          <option>Pending</option>
+          <option>Approved</option>
+        </select>
+
+        <select class="filter-dropdown">
+          <option>Filter</option>
+          <option>Culinary Arts</option>
+          <option>IT</option>
+        </select>
+      </div>
+
+      <!-- Table -->
+      <div class="table-wrapper">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Trainer's Names</th>
+              <th>District From</th>
+              <th>Trade</th>
+              <th>Qualification</th>
+              <th>Position</th>
+              <th>School From</th>
+              <th>View</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>Rwanda Coding Academy</td>
+              <td>Huye</td>
+              <td>Culinary Arts</td>
+              <td>A0</td>
+              <td>Matron</td>
+              <td>Rwanda Coding Academy</td>
+              <td class="view-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="#999">
+                  <path d="M4 2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2zm1 3v10h10V5H5zm2 2h6v1H7V7zm0 2h6v1H7V9zm0 2h4v1H7v-1z"/>
+                </svg>
+              </td>
+              <td><span class="status-badge pending">Pending</span></td>
+            </tr>
+
+            <tr>
+              <td>Vraiment Donc</td>
+              <td>Huye</td>
+              <td>Culinary Arts</td>
+              <td>A0</td>
+              <td>Matron</td>
+              <td>Rwanda Coding Academy</td>
+              <td class="view-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="#999">
+                  <path d="M4 2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2zm1 3v10h10V5H5zm2 2h6v1H7V7zm0 2h6v1H7V9zm0 2h4v1H7v-1z"/>
+                </svg>
+              </td>
+              <td><span class="status-badge approved">Approved</span></td>
+            </tr>
+
+            <tr>
+              <td>Rwanda Coding Academy</td>
+              <td>Huye</td>
+              <td>Culinary Arts</td>
+              <td>A0</td>
+              <td>Matron</td>
+              <td>Rwanda Coding Academy</td>
+              <td class="view-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="#999">
+                  <path d="M4 2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2zm1 3v10h10V5H5zm2 2h6v1H7V7zm0 2h6v1H7V9zm0 2h4v1H7v-1z"/>
+                </svg>
+              </td>
+              <td><span class="status-badge pending">Pending</span></td>
+            </tr>
+
+            <tr>
+              <td>Rwanda Coding Academy</td>
+              <td>Huye</td>
+              <td>Culinary Arts</td>
+              <td>A0</td>
+              <td>Matron</td>
+              <td>Rwanda Coding Academy</td>
+              <td class="view-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="#999">
+                  <path d="M4 2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2zm1 3v10h10V5H5zm2 2h6v1H7V7zm0 2h6v1H7V9zm0 2h4v1H7v-1z"/>
+                </svg>
+              </td>
+              <td><span class="status-badge approved">Approved</span></td>
+            </tr>
+
+            <tr>
+              <td>Rwanda Coding Academy</td>
+              <td>Huye</td>
+              <td>Culinary Arts</td>
+              <td>A0</td>
+              <td>Matron</td>
+              <td>Rwanda Coding Academy</td>
+              <td class="view-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="#999">
+                  <path d="M4 2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2zm1 3v10h10V5H5zm2 2h6v1H7V7zm0 2h6v1H7V9zm0 2h4v1H7v-1z"/>
+                </svg>
+              </td>
+              <td><span class="status-badge pending">Pending</span></td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>
