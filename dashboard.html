@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloud Dashboard</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="logo">
+      <div class="logo-box">
+        <img src="images/cloudImage.png" alt="Cloud3" class="logo-icon">
+      </div>
+
+      <h2>Cloud3</h2>
+    </div>
+
+    <nav class="menu">
+
+      <a href="#" class="menu-item active">
+        <i class="fa-solid fa-table-cells-large"></i>
+        Dashboard
+      </a>
+
+      <a href="#" class="menu-item">
+        <i class="fa-solid fa-share-nodes"></i>
+        Shared
+      </a>
+
+      <a href="#" class="menu-item">
+        <i class="fa-regular fa-star"></i>
+        Starred
+      </a>
+
+      <a href="#" class="menu-item">
+        <i class="fa-regular fa-trash-can"></i>
+        Deleted
+      </a>
+
+    </nav>
+
+    <div class="collapse">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+      Collapse
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search">
+      </div>
+
+      <button class="filter-btn">
+        <i class="fa-solid fa-sliders"></i>
+      </button>
+
+    </div>
+
+    <div class="main-content-wrapper">
+      <div class="main-left">
+
+    <!-- CATEGORY -->
+    <section class="categories">
+
+      <div class="section-title">
+        <h3>Category</h3>
+      </div>
+
+      <div class="category-grid">
+
+        <div class="card">
+
+          <div class="icon purple">
+            <img src="images/imagesImage.png" alt="Images" class="category-icon">
+          </div>
+
+          <h4>Images</h4>
+          <p>437 files</p>
+
+        </div>
+
+        <div class="card">
+
+          <div class="icon blue">
+            <img src="images/Documents.png" alt="Documents" class="category-icon">
+          </div>
+
+          <h4>Documents</h4>
+          <p>212 files</p>
+
+        </div>
+
+        <div class="card">
+
+          <div class="icon yellow">
+            <img src="images/audio.png" alt="Audio" class="category-icon">
+          </div>
+
+          <h4>Audio</h4>
+          <p>98 files</p>
+
+        </div>
+
+        <div class="card">
+
+          <div class="icon green">
+            <img src="images/video.png" alt="Videos" class="category-icon">
+          </div>
+
+          <h4>Videos</h4>
+          <p>560 files</p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- RECENT -->
+    <section class="recent">
+
+      <div class="section-title">
+        <h3>Recent</h3>
+      </div>
+
+      <div class="file-list">
+
+        <div class="file-item">
+
+          <div class="left">
+
+            <div class="file-icon blue">
+              <img src="images/Documents.png" alt="Document" class="file-type-icon">
+            </div>
+
+            <span>My Report.docx</span>
+
+          </div>
+
+          <span>DOCX File</span>
+
+          <span>7 MB</span>
+
+          <i class="fa-solid fa-ellipsis"></i>
+
+        </div>
+
+        <div class="file-item">
+
+          <div class="left">
+
+            <div class="file-icon yellow">
+              <img src="images/audio.png" alt="Audio" class="file-type-icon">
+            </div>
+
+            <span>Backsound.mp3</span>
+
+          </div>
+
+          <span>MP3 File</span>
+
+          <span>7 MB</span>
+
+          <i class="fa-solid fa-ellipsis"></i>
+
+        </div>
+
+        <div class="file-item">
+
+          <div class="left">
+
+            <div class="file-icon red">
+              <img src="images/imagesImage.png" alt="Image" class="file-type-icon">
+            </div>
+
+            <span>Artboard-1.png</span>
+
+          </div>
+
+          <span>PNG File</span>
+
+          <span>7 MB</span>
+
+          <i class="fa-solid fa-ellipsis"></i>
+
+        </div>
+
+        <div class="file-item">
+
+          <div class="left">
+
+            <div class="file-icon green">
+              <img src="images/video.png" alt="Video" class="file-type-icon">
+            </div>
+
+            <span>Final Present.mp4</span>
+
+          </div>
+
+          <span>MP4 File</span>
+
+          <span>7 MB</span>
+
+          <i class="fa-solid fa-ellipsis"></i>
+
+        </div>
+
+        <div class="file-item">
+
+          <div class="left">
+
+            <div class="file-icon orange">
+              <i class="fa-solid fa-folder file-symbol"></i>
+            </div>
+
+            <span>Work</span>
+
+          </div>
+
+          <span>Folder</span>
+
+          <span>7 MB</span>
+
+          <i class="fa-solid fa-ellipsis"></i>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- UPLOAD -->
+    <div class="upload-box">
+
+      <div class="upload-left">
+        <img src="images/cloudImage.png" alt="Upload" class="upload-cloud-icon">
+        <span>Upload files</span>
+      </div>
+
+      <i class="fa-solid fa-chevron-up"></i>
+
+    </div>
+
+      </div><!-- main-left -->
+
+      <!-- RIGHTBAR INTEGRATED -->
+      <aside class="rightbar-inline">
+
+        <div class="profile">
+          <img src="images/robert.png" alt="Robert Fox">
+          <div class="profile-text">
+            <h4>Robert Fox</h4>
+            <p>robert@mail.com</p>
+          </div>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+
+        <button class="add-btn-top">
+          Add new
+          <i class="fa-solid fa-plus"></i>
+        </button>
+
+        <!-- STORAGE -->
+        <div class="storage-card">
+
+          <div class="circle">
+            <svg width="200" height="200" viewBox="0 0 200 200">
+              <!-- Background circle -->
+              <circle cx="100" cy="100" r="85" fill="none" stroke="#e3dbfb" stroke-width="30"/>
+              <!-- Progress circle with rounded ends -->
+              <circle cx="100" cy="100" r="85" fill="none" stroke="#6846ff" stroke-width="30" 
+                      stroke-dasharray="534" stroke-dashoffset="401" 
+                      stroke-linecap="round" transform="rotate(-90 100 100)"/>
+            </svg>
+            
+            <div class="inner-circle">
+              <h2>25%</h2>
+              <p>used</p>
+            </div>
+          </div>
+
+          <h3>769 GB / 1 TB</h3>
+
+          <p>Available storage</p>
+
+        </div>
+
+        <!-- PREMIUM -->
+        <div class="premium-card">
+
+          <div class="premium-icon">
+            <img src="images/plusFile.png" alt="Premium" class="premium-plus-icon">
+          </div>
+
+          <h2>Go Premium</h2>
+
+          <p>
+            Upgrade space now and
+            get a 15% discount
+          </p>
+
+        </div>
+
+      </aside>
+
+    </div><!-- main-content-wrapper -->
+
+  </main>
+
+  </div><!-- container -->
+
+</body>
+</html>
