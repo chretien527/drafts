@@ -1,0 +1,294 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    color:#111;
+}
+
+.top-strip{
+    width:100%;
+    height:42px;
+    background:#121212;
+}
+
+.header{
+    width:100%;
+    height:90px;
+    background:#fff;
+    padding:0 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #ddd;
+}
+
+.logo{
+    width:140px;
+    height:48px;
+    background:#d50000;
+    border-radius:4px;
+}
+
+.navbar ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
+}
+
+.navbar ul li{
+    width:75px;
+    height:12px;
+    background:#d6d6d6;
+    border-radius:20px;
+}
+
+.header-icons{
+    display:flex;
+    gap:15px;
+}
+
+.header-icons span{
+    width:38px;
+    height:38px;
+    background:#ddd;
+    border-radius:50%;
+}
+
+.hero-news{
+    width:90%;
+    margin:40px auto;
+    display:flex;
+    gap:30px;
+}
+
+.featured-news{
+    width:68%;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.featured-image{
+    width:100%;
+    height:430px;
+    background:#cfcfcf;
+}
+
+.featured-content{
+    padding:25px;
+}
+
+.title{
+    height:15px;
+    background:#c9c9c9;
+    border-radius:20px;
+    margin-bottom:16px;
+}
+
+.big{
+    width:90%;
+    height:32px;
+}
+
+.small{
+    width:50%;
+}
+
+.meta{
+    display:flex;
+    gap:15px;
+    margin-top:25px;
+}
+
+.meta span{
+    width:100px;
+    height:12px;
+    background:#ddd;
+    border-radius:20px;
+}
+
+.trending-news{
+    width:32%;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.trend-card{
+    background:#fff;
+    border-radius:10px;
+    padding:15px;
+    display:flex;
+    gap:15px;
+}
+
+.trend-image{
+    width:120px;
+    height:90px;
+    background:#d5d5d5;
+    border-radius:6px;
+}
+
+.trend-text{
+    flex:1;
+}
+
+.line{
+    height:12px;
+    background:#c8c8c8;
+    border-radius:20px;
+    margin-bottom:12px;
+}
+
+.categories,
+.latest-news{
+    width:90%;
+    margin:0 auto 60px;
+}
+
+.section-title{
+    width:180px;
+    height:20px;
+    background:#cfcfcf;
+    border-radius:20px;
+    margin-bottom:30px;
+}
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.news-card{
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.card-image{
+    width:100%;
+    height:180px;
+    background:#d8d8d8;
+}
+
+.card-content{
+    padding:18px;
+}
+
+.featured-banner{
+    width:90%;
+    height:340px;
+    background:#d0d0d0;
+    margin:0 auto 70px;
+    border-radius:10px;
+}
+
+.latest-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.latest-card{
+    height:260px;
+    background:#fff;
+    border-radius:10px;
+}
+
+footer{
+    width:100%;
+    background:#111;
+    padding:60px 5%;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    margin-bottom:40px;
+}
+
+.footer-grid div{
+    height:170px;
+    background:#2b2b2b;
+    border-radius:8px;
+}
+
+.footer-bottom{
+    width:100%;
+    height:55px;
+    background:#2b2b2b;
+    border-radius:8px;
+}
+
+@media(max-width:992px){
+
+    .hero-news{
+        flex-direction:column;
+    }
+
+    .featured-news,
+    .trending-news{
+        width:100%;
+    }
+
+    .category-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .latest-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .header{
+        flex-direction:column;
+        height:auto;
+        gap:20px;
+        padding:20px;
+    }
+
+    .navbar ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .featured-image{
+        height:250px;
+    }
+
+    .category-grid{
+        grid-template-columns:1fr;
+    }
+
+    .latest-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .trend-card{
+        flex-direction:column;
+    }
+
+    .trend-image{
+        width:100%;
+        height:160px;
+    }
+
+}
