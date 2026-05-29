@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Float Layout Exercise</title>
+  <style>
+    /* Reset and Container setup */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #000; /* Matching the black background from the prompt */
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden; /* Contains floats */
+}
+
+/* Base style for all content blocks */
+.box {
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
+  color: #000;
+}
+
+/* Header */
+.header {
+  background-color: #c0c0c0;
+  width: 100%;
+  padding: 15px;
+}
+
+/* Columns Setup */
+.left-col {
+  float: left;
+  width: 75%;
+}
+
+.content-d {
+  float: right;
+  width: 25%;
+  background-color: #5197ff;
+  height: 300px; /* Tall block matching the image */
+  line-height: 260px; /* Vertically centers the text */
+}
+
+/* Sub-blocks inside Left Column */
+.content-a, .content-b, .content-c {
+  float: left;
+  width: 33.33%;
+  height: 120px;
+  line-height: 80px;
+}
+
+.content-a { background-color: #8a5311; color: #000; }
+.content-b { background-color: #79c565; }
+.content-c { background-color: #e0e0ff; }
+
+.content-e, .content-f {
+  clear: both; /* Pushes these rows below the top three floated elements */
+  width: 100%;
+  height: 90px;
+  line-height: 50px;
+}
+
+.content-e { background-color: #969696; }
+.content-f { background-color: #e0e0ff; }
+
+/* Footer */
+.content-g {
+  clear: both; /* Forces the footer below both floated columns */
+  width: 100%;
+  background-color: #ff9b9b;
+  padding: 15px;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Top Header -->
+    <div class="box header">H</div>
+
+    <!-- Left Main Column -->
+    <div class="left-col">
+      <div class="box content-a">Content A</div>
+      <div class="box content-b">Content B</div>
+      <div class="box content-c">Content C</div>
+      <div class="box content-e">Content E</div>
+      <div class="box content-f">Content F</div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="box content-d">Content D</div>
+
+    <!-- Footer -->
+    <div class="box content-g">Content G</div>
+  </div>
+
+</body>
+</html>
