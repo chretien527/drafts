@@ -1,39 +1,31 @@
 <?php
 
-include("db.php");
-
-if(isset($_POST['submit'])){
-    $name = $_POST['name'];
+include 'Connections.php';
+if(isset($POST['submit'])){
+    $first_name = $_POST['firstname'];
+    $last_name = $_POST['lastname'];
     $email = $_POST['email'];
-    $course = $_POST['course'];
+    $password = $_POST['password'];
+    $gender = $_POST['gender'];
 
-    $query = "INSERT INTO students(name,email,course)
-              VALUES('$name','$email','$course')";  
-    
-    mysqli_query($conn,$query);
+    $sql = "INSERT INTO users(firstname, lastname,email,gender,password)
+    Values('$first_name','$last_name','$email','$password','$gender')";
 
-    header("Location: index.php");
-            
+    $result = $conn->query($sql);
+
+    if($result == true){
+        echo "New record created successfully.";
+    } else {
+        echo "Error".$sql."<br>".$conn->error;
+    }
+    $conn->close();
 }
+
 ?>
 
-<!DOCTYPE html>
 <html>
-    <head>
-        <title>Add Student</title>
-    </head>
-    <body>
 
-    <h1>Add Student</h1>
-    
-    <form method="POST">
-        <input type="text" name="name" placeholder="name" required><br><br>
+<a class="btn btn info" href="signup.html"><br><br>Back</a>
+<a class="btn btn info" href="read.php"><br><br>View record from database</a>
 
-        <input type="email" name="email" placeholder="email" required><br><br>
-
-        <input type="text" name="course" placeholder="Course" required><br><br>
-
-        <button type="submit" name="submit">Save</button>
-    </form>
-</body>
 </html>
