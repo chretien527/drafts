@@ -1,23 +1,44 @@
 <?php
-include 'connections.php';
+include 'databaseConnections.php';
 if(isset($_POST['submit'])){
-    $firstname = $_POST['fname'];
-    $lastname = $_POST['lname'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
     $email = $_POST['email'];
+    $password = md5($_POST['password']);
     $gender = $_POST['gender'];
-    $password = sha1($_POST['password']);
-    $sql = "INSERT INTO users(fname,lname,email,gender,password) VALUES 
-    ('$firstname','$lastname','$email','$gender','$password')";
-    $result = $conn->query($sql);
-    if($result === true){
-        echo("Record added successfully.");
+    $sql = "INSERT INTO users(firstname, lastname, email, password, gender) VALUE (
+    $firstname, $lastname, $email, $password, $gender
+    )";
+    $result = $connection->query($sql);
+    if(!$result === true ){
+        echo "New Record created successfully";
     } else {
-        echo "Error".$sql."<br>".$conn->error;
+        echo ""
     }
-    $conn->close();
+    sql_close($connection);
 }
 ?>
+<?php
+include 'databaseConnections.php';
+if (isset($_POST['submit'])) {
+$first_name = $_POST['firstname'];
+$last_name = $_POST['lastname'];
+$email = $_POST['email'];
+$password = sha1($_POST['password']);
+$gender = $_POST['gender'];
+$sql = "INSERT INTO users(Fname,Lname,Email,Password,Gender) VALUES
+('$first_name','$last_name','$email','$password','$gender')";
+$result = $connection->query($sql);
+if ($result === true) {
+echo 'New record created successfully.';
+} else {
+echo 'Error:'.$sql.'<br>'.$connection->error;
+}
+$connection->close();
+}
+
+?>
 <html>
-<a href='form.html'><br><br>Go back</a>
-<a href='read.php'><br><br>View data records<a/>
+<a class="btn btn-info" href="signup.html"><br><br>Back</a>
+<a class="btn btn-info" href="read.php"><br><br>View record from database</a>
 </html>
