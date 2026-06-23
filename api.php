@@ -1,106 +1,67 @@
 <?php
-
-$conn = mysqli_connect("localhost","root","2010","crud_api");
-
-if(!conn){
-    die("Connection failed");
+header("Content-Type: application/json");
+header("Access-Control-Allow-Origin: *");
+$host = 'localhost';
+$db = 'user_app';
+$user = 'root'; // Change according to your setup
+$pass = '2010'; // Change according to your setup
+// Connect to the database
+$conn = new mysqli($host, $user, $pass, $db);
+if ($conn->connect_error) {
+die(json_encode(["error" => "Connection failed: " . $conn->connect_error]));
 }
-
+// Get the HTTP method
 $method = $_SERVER['REQUEST_METHOD'];
-
-// =========================
-// READ DATA
-// =========================
-
-if ($method == "GET"){
-
-    $query = "SELECT * FROM students";
-    $result = mysqli_query($conn,$query);
-
-    $students = [];
-
-    while($row = mysqli_fetch_assoc($result)){
-        $students[] = $row;
-    }
-
-    echo json_encode($students);
-
+// Switch based on the HTTP method
+switch ($method) {
+case 'GET':
+if (isset($_GET['id'])) {
+// Read a single user
+$id = $_GET['id'];
+$result = $conn->query("SELECT * FROM users WHERE
+id = $id");
+$user = $result->fetch_assoc();
+echo json_encode($user);
+} else {
+// Read all users
+$result = $conn->query("SELECT * FROM users");
+$users = [];
+while ($row = $result->fetch_assoc()) {
+$users[] = $row;
 }
-
-// ==========================
-//CREATE DATA
-// ==========================
-
-
-elseif($method == 'POST'){
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $course = $_POST['course'];
-
-    $query = "INSERT INTO students(name,email,course)
-            VALUES('$name','$email','$course')";
-
-            if(mysqli_query($conn,$query)){
-                echo json_encode([
-                    "message" => "Student Created"
-                ]);
-            } else {
-                echo json_encode([
-                    "message" => "Failed"
-                ]);
-            }
+echo json_encode($users);
 }
-
-// ===========================
-//UPDATE DATA
-// ===========================
-
-
-elseif($method=='PUT'){
-    parse_str(file_get_contents("php://input"), $_PUT);
-
-    $id = $_PUT['id'];
-    $name = $_PUT['name'];
-    $email = $_PUT['email'];
-    $course = $_PUT['course'];
-
-    $query = "UPDATE students
-             SET name='$name',
-                 email='$email',
-                 course='$course'
-                 WHERE id=$id";
-
-    if(mysqli_query($conn,$query)){
-        echo json_encode([
-            "message" => "Student updated"
-        ]);
-    } else {
-        echo json_encode([
-            "message" => "Failed"
-        ]);
-    }
+break;
+case 'POST':
+// Create a new user
+$data = json_decode(file_get_contents("php://input"),
+true);
+$name = $conn->real_escape_string($data['name']);
+$email = $conn->real_escape_string($data['email']);
+$conn->query("INSERT INTO users (name, email) VALUES
+('$name', '$email')");
+echo json_encode(["message" => "User created"]);
+break;
+case 'PUT':
+// Update an existing user
+$data = json_decode(file_get_contents("php://input"),
+true);
+$id = $data['id'];
+$name = $conn->real_escape_string($data['name']);
+$email = $conn->real_escape_string($data['email']);
+$conn->query("UPDATE users SET name='$name',
+email='$email' WHERE id=$id");
+echo json_encode(["message" => "User updated"]);
+break;
+case 'DELETE':
+// Delete a user
+$id = $_GET['id'];
+$conn->query("DELETE FROM users WHERE id=$id");
+echo json_encode(["message" => "User deleted"]);
+break;
+default:
+echo json_encode(["error" => "Invalid request method"]);
+break;
 }
-
-// ==============================
-// DELETE DATA
-// ==============================
-
-elseif($method == "DELETE"){
-    parse_str(file_get_contents("php://input"), $_DELETE);
-
-    $id = $_DELETE['id'];
-
-    $query = "DELETE FROM students WHERE id=$id";
-
-    if(mysqli_query($conn, $query)){
-        echo json_encode([
-            "message" => "Student deleted"
-        ]);
-    } else {
-        echo json_encode([
-            "message"=>"Failed"
-        ]);
-    }
-}
-
+$conn->close();
 ?>
