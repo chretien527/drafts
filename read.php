@@ -1,48 +1,47 @@
 <?php
-include 'connections.php';
-$sql = "select * from users";
+include 'databaseConnection.php';
+$sql = 'SELECT * FROM users';
 $result = $conn->query($sql);
 ?>
-
 <html>
 <head>
-<title>View users data</title>
+<title>View Page</title>
+<link rel="stylesheet" 
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
 <body>
-<h2>Users</h2>
-<table>
+<div class="container">
+<h2>users</h2>
+<table class="table">
 <thead>
 <tr>
 <th>ID</th>
-<th>firstname</th>
-<th>lastname</th>
-<th>email</th>
-<th>gender</th>
-<th>action</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+<th>Gender</th>
+<th>Action</th>
 </tr>
 </thead>
-<tbody>
+<tbody> 
 <?php
-if($result->num_rows>0){
-    while($row = $result->fetch_assoc()){
-        ?>
-        <tr>
-            <td><?php echo $rows['id']; ?></td>
-            <td><?php echo $rows['fname']; ?></td>
-            <td><?php echo $rows['lname']; ?></td>
-            <td><?php echo $rows['email']; ?></td>
-            <td><?php echo $rows['gender']; ?></td>
-            <td><a class ="btn btn-info" href="update.php?id=<? echo $rows['id']; ?>">Edit</a>
-        &nbsp
-            <a class="btn btn-danger" href="delete.php?id=<?php echo $rows['id']; ?>">Delete</a>
-    </td>
-        </tr>
-        <?php
-    }
-}
+if ($result->num_rows > 0) {
+while ($row = $result->fetch_assoc()) {
 ?>
-
+<tr>
+<td><?php echo $row['id']; ?></td>
+<td><?php echo $row['fname']; ?></td>
+<td><?php echo $row['lname']; ?></td>
+<td><?php echo $row['email']; ?></td>
+<td><?php echo $row['gender']; ?></td>
+<td><a class="btn btn-info" href="update.php?id=<?php echo $row['id']; 
+?>">Edit</a>&nbsp;<a class="btn btn-danger" href="delete.php?id=<?php echo 
+$row['id']; ?>">Delete</a></td>
+</tr> 
+<?php }
+?> 
 </tbody>
 </table>
+</div> 
 </body>
 </html>
