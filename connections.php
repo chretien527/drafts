@@ -1,13 +1,19 @@
 <?php
-$servername = 'localhost';
 $username = 'root';
-$password = '2010';
+$servername = 'localhost';
+$password = "2010"
+$dbname = "y1b_db";
 
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=y1b_db", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
-} catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+$connection = myslqi_connect($servername.$username,$password,$dbname);
+
+if(!$connection){
+    echo("Failed to connect:".mysqli_connect_error());
 }
+echo("Connection succeded");
+
+$stmt = $mysqli ->prepare("INSERT INTO users($Fname,$Lname,$Email,$Password,$Gender) VALUES(?,?,?,?,?)");
+$stmt = bind_paramas($firstname,$lastname,$email,$Gender,$password)
+;
+
 ?>
+
